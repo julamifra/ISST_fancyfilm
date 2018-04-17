@@ -12,7 +12,7 @@ export default class MenuElement extends React.Component {
 
 	render() {
 		return (
-			<ul>Lista de Opciones</ul>
+			<button className="App-boton"> ELEMENTO MENU </button>
 		);
 	}
 }

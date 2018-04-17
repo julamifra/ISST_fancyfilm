@@ -1,5 +1,8 @@
 import React from 'react';
 import Identidad from './Identidad';
+import logo from './LOGO.png';
+import './App.css'
+
 
 export default class Cabecera extends React.Component {
 
@@ -12,8 +15,17 @@ export default class Cabecera extends React.Component {
   	}
 
 	render() {
-		return (
-			<ul>La cabecera inlcuye la identificacion</ul>
+		return(
+			<div className = "Cabecera">
+					<h2 className = "App-izq">
+						<Identidad> Iniciar Sesion </Identidad>
+						<Identidad> Iniciar Sesion </Identidad>
+					</h2>
+					<h1 className = "App-title"> FANCYFILM </h1>
+					<img className = "App-foto" src={logo} alt='logo' /> 
+					
+					
+			</div>
 		);
 	}
 }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Cabecera from "./componentes/Cabecera";
 import Menu from "./componentes/Menu";
 import Detalle from "./componentes/Detalle";
 import Publi from "./componentes/Publi";
+import Identidad from "./componentes/Identidad";
 
 class App extends React.Component {
 
@@ -19,14 +19,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+      <div>
+        <header>
+          <Cabecera/>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <h1>
+          <Menu/>
+        </h1>
+        <div>
+          <div className ="mover-izq">
+            <Publi/>
+          </div>
+          <div className ="mover-der">
+            <Publi/>
+          </div>
+        </div>
       </div>
     );
   }

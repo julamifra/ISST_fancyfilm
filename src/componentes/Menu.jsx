@@ -13,7 +13,10 @@ export default class Menu extends React.Component {
 
 	render() {
 		return (
-			<ul>El menu tiene elementos</ul>
+			<div className = "App-menu">
+				<MenuElement className="App-menu-boton1"> Cines </MenuElement>
+				<MenuElement className="App-menu-boton2"> Cartelera </MenuElement>
+			</div>
 		);
 	}
 }

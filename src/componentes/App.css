@@ -1,0 +1,66 @@
+.App-foto {
+  height: 300px;
+  padding: 0px;
+  margin-top: 0px;
+}
+.Cabecera {
+  text-align: center;
+  width: auto;
+  height: auto;
+  background: #DDDDDD;
+  overflow: hidden;
+  border:5px solid;
+  margin-top: 10px;
+}
+.App-title {
+  font-size: 5em;
+  font-family: Times;
+  margin-top: 0px;
+}
+.App-boton{
+  margin-right: 5px;
+  width: 160px;
+  height: 60px;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
+  font-size: auto;
+  color: #000000;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  border: 2px solid #000000;
+}
+.App-izq{
+  text-align: left;
+  margin-top: 0px;
+}
+.App-menu{
+  width: auto;
+  height: auto;
+  background: #FFFFFF;
+  border:5px solid;
+  padding: 5px;
+}
+.App-menu-boton1{
+  margin-left: 60px;
+  margin-top: 0px;
+}
+.App-menu-boton2{
+  margin-right: 60px;
+  margin-top: 0px;
+}
+.publi{
+  width: 250px;
+  height: auto;
+  background: #000000;
+  border:5px solid;
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.mover-der{
+  float: right;
+}
+.mover-izq{
+  float: left;
+}

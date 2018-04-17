@@ -12,7 +12,9 @@ export default class Publi extends React.Component {
 
 	render() {
 		return (
-			<ul>Anunciantesssss</ul>
+			<div className = "publi">
+			  <p> AQUI VA PUBLI </p> 
+			</div>
 		);
 	}
 }

@@ -12,7 +12,8 @@ export default class Identidad extends React.Component {
 
 	render() {
 		return (
-			<ul>Registro de usuario</ul>
+			<button className="App-boton"> HOLA </button> 
+
 		);
 	}
 }
