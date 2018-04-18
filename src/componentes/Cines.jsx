@@ -1,6 +1,6 @@
 import React from 'react';
 import Tabla from './Tabla';
-import Lista from './Lista';
+
 
 export default class Cines extends React.Component {
 
@@ -14,7 +14,9 @@ export default class Cines extends React.Component {
 
 	render() {
 		return (
-			<ul>Los Cines</ul>
+			<div>
+			<Tabla /*sines={this.props.sines}*//>
+			</div>
 		);
 	}
 }

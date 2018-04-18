@@ -12,7 +12,13 @@ export default class Contacto extends React.Component {
 
 	render() {
 		return (
-			<ul>Correo de contacto e info</ul>
+			<div>
+				<h1> Contacto </h1>
+					<h2> Vía telefónica: </h2>
+					<p> 902 XXX 210; 0,08 €/minuto desde un teléfono fijo (las tarifas móviles pueden variar) </p>
+					<h2> Vía correo: </h2>
+					<p> fancyfilm@crack.com; Escríbenos tus dudas, quejas o ideas</p>
+			</div>
 		);
 	}
 }
