@@ -64,10 +64,31 @@
 }
 .mover-der{
   float: right;
+  margin-left: 5px;
 }
 .mover-izq{
   float: left;
+  margin-right: 5px;
 }
 .mover-centro{
   text-align: center;
+  width: auto;
+  height: auto;
+  background: #8FBC8F;
+  border:5px solid;
+  padding: 5px;
+  margin-right: 348px;
+  margin-left: 340px;
+}
+.tabla{
+  text-align: center;
+  width: auto;
+  height: auto;
+  border:5px solid;
+  padding: 5px;
+}
+.espacio-fila{
+  font-family: Times;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

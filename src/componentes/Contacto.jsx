@@ -12,12 +12,16 @@ export default class Contacto extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<h1> Contacto </h1>
-					<h2> Vía telefónica: </h2>
-					<p> 902 XXX 210; 0,08 €/minuto desde un teléfono fijo (las tarifas móviles pueden variar) </p>
-					<h2> Vía correo: </h2>
-					<p> fancyfilm@crack.com; Escríbenos tus dudas, quejas o ideas</p>
+			<div className ="tabla">
+				<h1 className ="espacio-fila"> Contacto </h1>
+					<p> </p>
+					<tr className ="espacio-fila"> Vía telefónica:
+					<th> 902 XXX 210; 0,08 €/minuto desde un teléfono fijo (las tarifas móviles pueden variar) </th>
+					</tr>
+					<p> </p>
+					<tr className ="espacio-fila"> Vía correo:              
+					<th> fancyfilm@crack.com; Escríbenos tus dudas, quejas o ideas</th>
+					</tr>
 			</div>
 		);
 	}
