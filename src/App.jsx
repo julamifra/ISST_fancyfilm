@@ -31,9 +31,11 @@ class App extends React.Component {
           <div className ="mover-izq">
             <Publi/>
           </div>
-          <Detalle/>
           <div className ="mover-der">
             <Publi/>
+          </div>
+          <div className="mover-centro">
+          <Detalle/>
           </div>
         </div>
       </div>
