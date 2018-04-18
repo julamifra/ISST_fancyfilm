@@ -15,7 +15,11 @@ export default class Detalle extends React.Component {
 
 	render() {
 		return (
-			<ul>Esta va a ser jodida</ul>
+			<div>
+			<Cartelera /*pelis={this.props.pelis}*//>
+			<Cines /*sines={this.props.sines}*//>
+			<Contacto /*contact={this.props.contact}*//>
+			</div>
 		);
 	}
 }

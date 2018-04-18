@@ -1,6 +1,6 @@
 import React from 'react';
 import Tabla from './Tabla';
-import Lista from './Lista';
+
 
 export default class Cartelera extends React.Component {
 
@@ -14,7 +14,9 @@ export default class Cartelera extends React.Component {
 
 	render() {
 		return (
-			<ul>Las pelis</ul>
+			<div>
+			<Tabla /*pelis={this.props.pelis}*//>
+			</div>
 		);
 	}
 }
