@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuElement from './MenuElement';
+import './App.css'
 
 export default class Menu extends React.Component {
 
@@ -13,9 +13,12 @@ export default class Menu extends React.Component {
 
 	render() {
 		return (
-			<div className = "App-menu">
-				<MenuElement className="App-menu-boton1"> Cines </MenuElement>
-				<MenuElement className="App-menu-boton2"> Cartelera </MenuElement>
+			<div className ="App-menu">
+				<div className="App-menu-boton1">
+				<button className="App-boton"> Cine </button>
+				<button className="App-boton"> Cartelera </button>
+				<button className="App-boton"> Contactar </button>
+				</div>
 			</div>
 		);
 	}

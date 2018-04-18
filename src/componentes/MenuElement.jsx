@@ -12,7 +12,8 @@ export default class MenuElement extends React.Component {
 
 	render() {
 		return (
-			<button className="App-boton"> ELEMENTO MENU </button>
+			<button className="App-boton"> Cine </button>
+
 		);
 	}
 }
