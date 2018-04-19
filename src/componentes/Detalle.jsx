@@ -2,6 +2,7 @@ import React from 'react';
 import Cartelera from './Cartelera';
 import Cines from './Cines';
 import Contacto from './Contacto';
+import Menu from './Menu';
 
 export default class Detalle extends React.Component {
 
@@ -13,13 +14,47 @@ export default class Detalle extends React.Component {
     	console.log("Cargó");
   	}
 
+
 	render() {
-		return (
+
+		if(this.props.cinesseleccionado === 1){
+			return (
 			<div>
-			<Cartelera /*pelis={this.props.pelis}*//>
-			<Cines /*sines={this.props.sines}*//>
+			
+			<Cines/>
+			</div>
+			);
+		}
+		if(this.props.contactarseleccionado === 1){
+			return (
+			<div>
 			<Contacto /*contact={this.props.contact}*//>
 			</div>
-		);
+			);
+		}
+		if(this.props.carteleraseleccionado === 1){
+			return (
+			<div>
+			<Cartelera/>
+			</div>
+			);
+		}
+		if(this.props.promocionesseleccionado === 1){
+			return (
+			<div>
+			AQUI VA PROMOCIONES
+			</div>
+			);
+		}
+		if(this.props.inicio === 1){
+			return (
+			<div>
+			INICIO
+			</div>
+			);
+		}
+		else{
+			return (<div> </div> );
+		}
 	}
 }

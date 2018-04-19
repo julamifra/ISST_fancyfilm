@@ -8,10 +8,15 @@ export default class Cabecera extends React.Component {
 
 	constructor(props){
         super(props);
+        this.irPrincipal = this.irPrincipal.bind(this);
     }
 
   	componentDidMount() {
     	console.log("Cargó");
+  	}
+
+  	irPrincipal(){
+  		this.props.appClick4();
   	}
 
 	render() {
@@ -22,7 +27,7 @@ export default class Cabecera extends React.Component {
 						<button className="App-boton"> LOGIN </button> 
 					</h2>
 					<h1 className = "App-title"> FANCYFILM </h1>
-					<img className = "App-foto" src={logo} alt='logo' /> 
+					<img onClick={this.irPrincipal} className = "App-foto" src={logo} alt='logo' /> 
 					
 					
 			</div>
