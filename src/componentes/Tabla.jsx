@@ -12,15 +12,16 @@ export default class Tabla extends React.Component {
   	}
 
 	render() {
-		let pelis = this.props.pelis;
-		let sines = this.props.sines;
-
-		/*if(pelis.length>0){
+		let carteleraseleccionado = this.props.carteleraseleccionado;
+		let cinesseleccionado = this.props.cinesseleccionado;
+		if(carteleraseleccionado === 1){
+            /*
+COMO NO ESTA EL JSON, HE COMENTADO ESTO Y ENTRA EN EL ELSE DE LA OTRA CONDICION!!!!!
             return(
                 <div>
                     <h1>Películas</h1>
                     <ul>
-                        {pelis.map((dato, index) => {
+                        {carteleraseleccionado.map((dato, index) => {
                             return (<li key={index}>
                                 <p>{dato.titulo}</p>
                                 <p>{dato.portada}</p>
@@ -36,22 +37,23 @@ export default class Tabla extends React.Component {
                         }
                     </ul>
                 </div>
-            );
+            );*/
         }else{
             return(
                 <div>
+                	<h1>Cines</h1>
                     <p>Cargando nueva lista...</p>
                 </div>
             )
         }
 
-        if(sines.length>0){
-           
-
-
-dentro del div-->
-<ul>
-                        {pelis.map((dato, index) => {
+        if(cinesseleccionado === 1){
+        	console.log("entra en cines");
+           return(
+                <div>
+                    <h1>Cines</h1>
+                   <ul>
+                        {cinesseleccionado.map((dato, index) => {
                             return (<li key={index}>
                                 <p>{dato.nombre}</p>
                                 <p>{dato.foto}</p>
@@ -64,18 +66,15 @@ dentro del div-->
                         })
                         }
                     </ul>
-
-           */ return(
-                <div>
-                    <h1>Cines</h1>
                 </div>
             );
-       /* }else{
+        }else{
             return(
                 <div>
+                	<h1>Películas</h1>
                     <p>Cargando nueva lista...</p>
                 </div>
             )
-        }*/
+        }
 	}
 }

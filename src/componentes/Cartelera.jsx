@@ -15,7 +15,7 @@ export default class Cartelera extends React.Component {
 	render() {
 		return (
 			<div>
-			<Tabla /*pelis={this.props.pelis}*//>
+			<Tabla carteleraseleccionado = {this.props.carteleraseleccionado} />
 			</div>
 		);
 	}

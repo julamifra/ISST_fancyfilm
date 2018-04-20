@@ -16,12 +16,14 @@ export default class Detalle extends React.Component {
 
 
 	render() {
+		let cinesseleccionado = this.props.cinesseleccionado;
+		let carteleraseleccionado = this.props.carteleraseleccionado;
 
 		if(this.props.cinesseleccionado === 1){
 			return (
 			<div>
 			
-			<Cines/>
+			<Cines cinesseleccionado = {cinesseleccionado} />
 			</div>
 			);
 		}
@@ -35,7 +37,7 @@ export default class Detalle extends React.Component {
 		if(this.props.carteleraseleccionado === 1){
 			return (
 			<div>
-			<Cartelera/>
+			<Cartelera carteleraseleccionado = {carteleraseleccionado} />
 			</div>
 			);
 		}

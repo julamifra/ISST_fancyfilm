@@ -15,8 +15,7 @@ export default class Cines extends React.Component {
 	render() {
 		return (
 			<div>
-			HOLAA!
-			<Tabla /*sines={this.props.sines}*//>
+			<Tabla cinesseleccionado = {this.props.cinesseleccionado}/>
 			</div>
 		);
 	}
