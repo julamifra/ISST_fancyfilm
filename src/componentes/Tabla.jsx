@@ -41,8 +41,8 @@ COMO NO ESTA EL JSON, HE COMENTADO ESTO Y ENTRA EN EL ELSE DE LA OTRA CONDICION!
         }else{
             return(
                 <div>
-                	<h1>Cines</h1>
-                    <p>Cargando nueva lista...</p>
+                	<h1 className="App-CoU">Cines</h1>
+                    <p  className="App-fuente">Cargando nueva lista...</p>
                 </div>
             )
         }
@@ -71,8 +71,8 @@ COMO NO ESTA EL JSON, HE COMENTADO ESTO Y ENTRA EN EL ELSE DE LA OTRA CONDICION!
         }else{
             return(
                 <div>
-                	<h1>Películas</h1>
-                    <p>Cargando nueva lista...</p>
+                	<h1 className="App-CoU">Películas</h1>
+                    <p  className="App-fuente">Cargando nueva lista...</p>
                 </div>
             )
         }

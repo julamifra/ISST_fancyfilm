@@ -13,7 +13,7 @@ export default class Contacto extends React.Component {
 	render() {
 		return (
 			<div className ="tabla">
-				<h1 className ="espacio-fila"> Contacto </h1>
+				<h1 className ="App-CoU"> Contacto </h1>
 					<p> </p>
 					<tr className ="espacio-fila"> Vía telefónica:
 					<th> 902 XXX 210; 0,08 €/minuto desde un teléfono fijo (las tarifas móviles pueden variar) </th>

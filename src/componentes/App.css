@@ -14,11 +14,19 @@
 }
 .App-title {
   font-size: 5em;
-  font-family: Times;
+  font-family: Helvetica;
   margin-top: 0px;
   margin-left: 270px;
 }
+.App-CoU {
+  font-family: Helvetica;
+  font-size: 5em;
+}
+.App-fuente{
+  font-family: Helvetica;
+}
 .App-boton{
+  font-family: Helvetica;
   margin-right: 5px;
   margin-top: 5px;
   width: 160px;
@@ -88,7 +96,7 @@
   padding: 5px;
 }
 .espacio-fila{
-  font-family: Times;
+  font-family: Helvetica;
   margin-top: 5px;
   margin-bottom: 5px;
 }

@@ -43,14 +43,14 @@ export default class Detalle extends React.Component {
 		}
 		if(this.props.promocionesseleccionado === 1){
 			return (
-			<div>
+			<div  className="App-CoU">
 			AQUI VA PROMOCIONES
 			</div>
 			);
 		}
 		if(this.props.inicio === 1){
 			return (
-			<div>
+			<div  className="App-CoU">
 			INICIO
 			</div>
 			);
