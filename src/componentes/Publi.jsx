@@ -6,14 +6,6 @@ import img3 from './imagen3.jpg';
 
 export default class Publi extends React.Component {
 
-	constructor(props){
-        super(props);
-    }
-
-  	componentDidMount() {
-    	console.log("Cargó");
-  	}
-
   	getRandomArbitrary(min,max){
   		return Math.floor(Math.random()*(max-min))+min;
   	}

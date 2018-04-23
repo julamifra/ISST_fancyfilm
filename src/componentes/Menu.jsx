@@ -4,37 +4,35 @@ import './App.css'
 export default class Menu extends React.Component {
 
 	constructor(props){
-        super(props);
-        this.contactaDestino = this.contactaDestino.bind(this);
-        this.cineDestino = this.cineDestino.bind(this);
-        this.carteleraDestino = this.carteleraDestino.bind(this);
-        this.promocionesDestino = this.promocionesDestino.bind(this);
-    }
+		super(props);
+		this.irAlgoCi = this.irAlgoCi.bind(this);
+		this.irAlgoCa = this.irAlgoCa.bind(this);
+		this.irAlgoCo = this.irAlgoCo.bind(this);
+		this.irAlgoPro = this.irAlgoPro.bind(this);
+    	}
 
-  	componentDidMount() {
-    	console.log("Cargó");
+  	irAlgoCi(){
+  		this.props.appClick("listaCines");
   	}
-  	contactaDestino(){
-  		this.props.appClick();
+	irAlgoCa(){
+  		this.props.appClick("cartelera");
   	}
-  	cineDestino(){
-  		this.props.appClick1();
+	irAlgoCo(){
+  		this.props.appClick("contacto");
   	}
-  	carteleraDestino(){
-  		this.props.appClick2();
+	irAlgoPro(){
+  		this.props.appClick("promo");
   	}
-  	promocionesDestino(){
-  		this.props.appClick3();
-  	}
+  	
 
 	render() {
 		return (
 			<div className ="App-menu">
 				<div className="App-menu-boton1">
-				<button id="IrCine" onClick={this.cineDestino} className="App-boton"> Cine </button>
-				<button id="IrCartelera" onClick={this.carteleraDestino} className="App-boton"> Cartelera </button>
-				<button id="IrContacto" onClick={this.contactaDestino} className="App-boton"> Contactar </button>
-				<button id="IrPromo" onClick={this.promocionesDestino} className="App-boton"> Promociónes </button>
+				<button id="IrCine" onClick={this.irAlgoCi} className="App-boton"> Cine </button>
+				<button id="IrCartelera" onClick={this.irAlgoCa} className="App-boton"> Cartelera </button>
+				<button id="IrContacto" onClick={this.irAlgoCo} className="App-boton"> Contactar </button>
+				<button id="IrPromo" onClick={this.irAlgoPro} className="App-boton"> Publicar promoción </button>
 				</div>
 			</div>
 		);

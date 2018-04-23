@@ -2,61 +2,47 @@ import React from 'react';
 import Cartelera from './Cartelera';
 import Cines from './Cines';
 import Contacto from './Contacto';
-import Menu from './Menu';
+import Promociones from './Promociones';
+import FichaPelicula from './FichaPelicula';
+import FichaCine from './FichaCine';
+import Inicio from './Inicio';
 
 export default class Detalle extends React.Component {
-
 	constructor(props){
-        super(props);
-    }
+		super(props);
+		this.detallePelisClick = this.detallePelisClick.bind(this);
+		this.detalleCineClick = this.detalleCineClick.bind(this);
+    	}
 
-	componentDidMount() {
-    	console.log("Cargó");
-  	}
+	detallePelisClick(peli){
+        	this.props.appPelisClick(peli);
+   	}
 
+    	detalleCineClick(cine){
+       		this.props.appCineClick(cine);
+    	}
 
 	render() {
-		let cinesseleccionado = this.props.cinesseleccionado;
-		let carteleraseleccionado = this.props.carteleraseleccionado;
-
-		if(this.props.cinesseleccionado === 1){
-			return (
-			<div>
-			
-			<Cines cinesseleccionado = {cinesseleccionado} />
-			</div>
-			);
-		}
-		if(this.props.contactarseleccionado === 1){
-			return (
-			<div>
-			<Contacto /*contact={this.props.contact}*//>
-			</div>
-			);
-		}
-		if(this.props.carteleraseleccionado === 1){
-			return (
-			<div>
-			<Cartelera carteleraseleccionado = {carteleraseleccionado} />
-			</div>
-			);
-		}
-		if(this.props.promocionesseleccionado === 1){
-			return (
-			<div  className="App-CoU">
-			AQUI VA PROMOCIONES
-			</div>
-			);
-		}
-		if(this.props.inicio === 1){
-			return (
-			<div  className="App-CoU">
-			INICIO
-			</div>
-			);
-		}
-		else{
-			return (<div> </div> );
+		let boton = this.props.botonSeleccionado;
+		switch(boton){
+			case "listaCines":
+				return (<div><Cines detalleCineClick={this.detalleCineClick} cines={this.props.cines}/></div>
+				);
+			case "cartelera":
+				return (<div><Cartelera detallePelisClick={this.detallePelisClick} pelis={this.props.pelis}/></div>
+				);
+			case "promo":
+				return (<div><Promociones cineLogeado={this.props.cineLogeado}/></div> );
+			case "contacto":
+				return (<div><Contacto/></div> );
+			case "inicio":
+				return (<div><Inicio/></div> );
+			case "pelicula":
+				return(<div><FichaPelicula peliculaSeleccionada={this.props.peliculaSeleccionada}/></div>);
+			case "cine":
+				return(<div className="info-cine"><FichaCine cineSeleccionado={this.props.cineSeleccionado}/></div>);
+			default:
+				return (<div><Inicio/></div> );
 		}
 	}
 }

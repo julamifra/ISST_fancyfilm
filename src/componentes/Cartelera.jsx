@@ -1,22 +1,32 @@
 import React from 'react';
-import Tabla from './Tabla';
+import CarteleraElement from './CarteleraElement';
 
 
 export default class Cartelera extends React.Component {
-
 	constructor(props){
-        super(props);
-    }
+		super(props);
+		this.detallePelisClick = this.detallePelisClick.bind(this);
+    	}
 
-  	componentDidMount() {
-    	console.log("Cargó");
-  	}
-
+	detallePelisClick(peli){
+        	this.props.detallePelisClick(peli);
+    	}
 	render() {
-		return (
-			<div>
-			<Tabla carteleraseleccionado = {this.props.carteleraseleccionado} />
-			</div>
-		);
+		let pelis = this.props.pelis;
+
+		if(pelis === undefined){
+			return <div>Cargando nueva lista...</div>
+            	}else{
+			let pelis = this.props.pelis.map((peli, numeroPeli) => {
+		 		let mykey = "" + numeroPeli;
+		  		return (
+					<CarteleraElement key={mykey} peli={peli} detallePelisClick={this.detallePelisClick}/>
+				);
+		  	});
+		    	return (<div>
+			    		<h2 className="fuente-inicio-titulo">Películas</h2>
+			    		<div>{pelis}</div>
+		   	 	</div>);
+		}
 	}
 }

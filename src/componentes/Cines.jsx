@@ -1,22 +1,34 @@
 import React from 'react';
-import Tabla from './Tabla';
+import CineElement from './CineElement';
 
 
 export default class Cines extends React.Component {
-
 	constructor(props){
-        super(props);
-    }
+		super(props);
+		this.detalleCineClick = this.detalleCineClick.bind(this);
+	    }
 
-  	componentDidMount() {
-    	console.log("Cargó");
-  	}
+	detalleCineClick(cine){
+		this.props.detalleCineClick(cine);
+	    }
 
 	render() {
-		return (
-			<div>
-			<Tabla cinesseleccionado = {this.props.cinesseleccionado}/>
-			</div>
-		);
+		let cines = this.props.cines;
+
+		if(cines === undefined){
+			return <div>Cargando nueva lista...</div>
+            	}else{
+			let cines = this.props.cines.map((cine, numeroCine) => {
+		 		let mykey = "" + numeroCine;
+		  		return (
+					<CineElement key={mykey} cine={cine} detalleCineClick={this.detalleCineClick}/>
+				);
+		  	});
+		    	return (<div>
+			    		<h2 className="fuente-inicio-titulo">Cines</h2>
+			    		<div >{cines}</div>
+		   	 	</div>);
+		}
+		
 	}
 }

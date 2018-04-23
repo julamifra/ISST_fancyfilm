@@ -1,108 +1,127 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
+import $ from 'jquery';
 
 import Cabecera from "./componentes/Cabecera";
 import Menu from "./componentes/Menu";
 import Detalle from "./componentes/Detalle";
 import Publi from "./componentes/Publi";
-import Identidad from "./componentes/Identidad";
-
-import Cines from "./componentes/Cines";
-import Cartelera from "./componentes/Cartelera";
-import Contacto from "./componentes/Contacto";
+import FormLogin from "./componentes/FormLogin";
 
 class App extends React.Component {
 
   constructor(props){
     super(props);
     this.state={
-      contactarseleccionado: 0,
-      cinesseleccionado:0,
-      carteleraseleccionado:0,
-      promocionesseleccionado:0,
-      inicio:0
+      	botonSeleccionado: "inicio",
+	pelis: undefined,
+        peliculaSeleccionada: undefined,
+        cineSeleccionado: undefined,
+	cines: undefined,
+	cineLogeado: undefined,
     };
     this.appClick=this.appClick.bind(this);
-    this.appClick1=this.appClick1.bind(this);
-    this.appClick2=this.appClick2.bind(this);
-    this.appClick3=this.appClick3.bind(this);
-    this.appClick4=this.appClick4.bind(this);
+    this.appPelisClick=this.appPelisClick.bind(this);
+    this.appCineClick=this.appCineClick.bind(this);
+    this.clickLogin=this.clickLogin.bind(this);
   }
 
-  componentDidMount() {
-    console.log("Cargó");
+  appClick(boton){
+    	this.setState({
+      		botonSeleccionado: boton
+    	});
+	switch(boton){
+			case "listaCines":
+				$.ajax({
+  					url: "http://localhost:8080/ISST/CinesServlet",
+  				})
+  				.done(function(data){
+	  				this.setState({
+	  					cines: data,
+	  				});
+  				}.bind(this));
+				break;
+			case "cartelera":
+				$.ajax({
+  					url: "http://localhost:8080/ISST/CarteleraServlet",
+  				})
+  				.done(function(data){
+	  				this.setState({
+	  					pelis: data,
+	  				});
+  				}.bind(this));
+				break;
+			default:
+				break;
+		}
   }
 
-  appClick(){
+  appPelisClick(peli){
     this.setState({
-      contactarseleccionado: 1,
-      cinesseleccionado: 0,
-      carteleraseleccionado: 0,
-      promocionesseleccionado: 0,
-      inicio:0
+          botonSeleccionado: "pelicula",
+          peliculaSeleccionada: peli
     });
   }
-  appClick1(){
+
+  appCineClick(cine){
     this.setState({
-      cinesseleccionado: 1,
-      contactarseleccionado: 0,
-      carteleraseleccionado: 0,
-      promocionesseleccionado: 0,
-      inicio:0
+          botonSeleccionado: "cine",
+          cineSeleccionado: cine
     });
   }
-  appClick2(){
+  clickLogin(nombreCineLogeado, direccion){
     this.setState({
-      carteleraseleccionado: 1,
-      contactarseleccionado: 0,
-      cinesseleccionado: 0,
-      promocionesseleccionado: 0,
-      inicio:0
+          botonSeleccionado: "inicio",
+          cineLogeado: nombreCineLogeado
     });
-  }
-  appClick3(){
-    this.setState({
-      promocionesseleccionado: 1,
-      contactarseleccionado: 0,
-      cinesseleccionado: 0,
-      carteleraseleccionado: 0,
-      inicio:0
-    });
-  }
-  appClick4(){
-    this.setState({
-      promocionesseleccionado: 0,
-      contactarseleccionado: 0,
-      cinesseleccionado: 0,
-      carteleraseleccionado: 0,
-      inicio:1
+    $.ajax({
+  	url: "http://localhost:8080/ISST/NuevoCineServlet?nombreCine="+nombreCineLogeado+"&direccion="+direccion,
     });
   }
 
   render() {
+if(this.state.botonSeleccionado === "login"){
+			return (
+			      <div>
+				<header>
+				  <Cabecera appClick={this.appClick}/>
+				</header>
 
-    return (
-      <div>
-        <header>
-          <Cabecera appClick4={this.appClick4}/>
-        </header>
+				<h1>
+				  <Menu appClick={this.appClick}/>
+				</h1>
+				<div>
+				  	  <div className="mover-centro">
+						<FormLogin clickLogin={this.clickLogin} />
+					  </div>
+				</div>
+		      	      </div>
+		    );
+		
+	}else{
+		    return (
+		      <div>
+			<header>
+			  <Cabecera appClick={this.appClick}/>
+			</header>
 
-        <h1>
-          <Menu appClick={this.appClick} appClick1={this.appClick1} appClick2={this.appClick2} appClick3={this.appClick3}/>
-        </h1>
-        <div>
-          <div className ="mover-izq">
-            <Publi/>
-          </div>
-          <div className ="mover-der">
-            <Publi/>
-          </div>
-          <div className="mover-centro">
-          <Detalle inicio = {this.state.inicio} contactarseleccionado = {this.state.contactarseleccionado} cinesseleccionado = {this.state.cinesseleccionado} carteleraseleccionado = {this.state.carteleraseleccionado} promocionesseleccionado = {this.state.promocionesseleccionado} />
-          </div>
-        </div>
-      </div>
-    );
+			<h1>
+			  <Menu appClick={this.appClick}/>
+			</h1>
+			<div>
+			  <div className ="mover-izq">
+			    <Publi/>
+			  </div>
+			  <div className ="mover-der">
+			    <Publi/>
+			  </div>
+			  <div className="mover-centro">
+			  <Detalle appPelisClick={this.appPelisClick} appCineClick={this.appCineClick} botonSeleccionado={this.state.botonSeleccionado} pelis={this.state.pelis} cines={this.state.cines} peliculaSeleccionada={this.state.peliculaSeleccionada} cineSeleccionado={this.state.cineSeleccionado} cineLogeado={this.state.cineLogeado}/>
+			  </div>
+			</div>
+		      </div>
+		    );
+	}
   }
 }
 

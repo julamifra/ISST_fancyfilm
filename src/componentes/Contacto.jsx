@@ -2,27 +2,25 @@ import React from 'react';
 
 export default class Contacto extends React.Component {
 
-	constructor(props){
-        super(props);
-    }
-
-	componentDidMount() {
-    	console.log("Cargó");
-  	}
-
 	render() {
 		return (
-			<div className ="tabla">
-				<h1 className ="App-CoU"> Contacto </h1>
-					<p> </p>
-					<tr className ="espacio-fila"> Vía telefónica:
-					<th> 902 XXX 210; 0,08 €/minuto desde un teléfono fijo (las tarifas móviles pueden variar) </th>
-					</tr>
-					<p> </p>
-					<tr className ="espacio-fila"> Vía correo:              
-					<th> fancyfilm@crack.com; Escríbenos tus dudas, quejas o ideas</th>
-					</tr>
-			</div>
+			<form action="../../public/index.html"  >
+				<label className = "fuente-contacta ajustar-contacta">
+				Asunto:
+				<input type="text" name="asunto"/>
+				</label>
+
+				<p> </p>
+
+				<label className = "fuente-contacta ajustar-contacta">
+				Escriba su problema:
+				<textarea type="text" name="problema" className = "tamaño-input" rows="10" cols="40"/>
+				</label>
+
+				<p> </p>
+
+				<input type="submit" value="Enviar" className = "App-boton"/>
+			</form>
 		);
 	}
 }
