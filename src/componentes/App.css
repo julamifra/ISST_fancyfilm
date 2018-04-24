@@ -131,14 +131,15 @@
 
 }
 .cartel{
-  width: auto;
+  width: 200px;
   height: auto;
+  margin: 0px;
   border:5px solid;
   padding: 2px;
   float: left;
 }
 .info-peli{
-  margin: 0% 0% 5% 30%;
+  margin: 0% 0% 0% 30%;
   width:45%;
   height: 10%;
   padding: 2px;
@@ -181,8 +182,9 @@
   border-radius: 12px;
 }
 .trailer{
-  width: auto;
-  height: auto;
+  width: 450px;
+  height: 300px;
+  margin-bottom: 50px;
 }
 
 

@@ -16,10 +16,11 @@ export default class FichaPelicula extends React.Component {
 			      let idioma = peli.idioma;
 			      //let cartel = peli.cartel;
 			      let trailer = peli.trailerURL;
+			      let urlImg = "http://localhost:8080/ISST/ImgPeliculaServlet?name="+ nombre;
 			
 				return (
       			<div>
-      			<img src={imagenCartel} alt='logo' className = "cartel"/>
+      			<img src={urlImg} alt='logo' className = "cartel"/>
 	      			<div className = "info-peli">
 			              	<ul className="estiloLista">
 				                <li> nombre:{nombre} </li>
@@ -33,12 +34,13 @@ export default class FichaPelicula extends React.Component {
 				                <li> director:{directorNombre} </li>
 				                <p> </p>
 				                <li> idioma:{idioma} </li>
-				                <p> </p>
-				                <li> <iframe src={trailer} title={nombre} className="trailer" allowFullScreen></iframe> </li>
 			              	</ul>
-	           		 	</div>
-	           		 	<FormComentario nombrePeli={nombre}/>
-	           		 	<p className="trampa"></p>
+					<p className="trampa"></p>
+	           		 </div>
+				
+				 <iframe src={trailer} title={nombre} className="trailer" allowFullScreen></iframe>
+	           		 <FormComentario nombrePeli={nombre}/>
+	           		 
            		</div>
       		);
   		     

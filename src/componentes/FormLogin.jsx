@@ -15,7 +15,7 @@ export default class FormLogin extends React.Component {
 
 	render() {
 		return (
-			<form>
+			<form action="">
 				<input type="text" name="nombreCine" placeholder="Nombre del cine"/>
 				<input type="text" name="direccion" placeholder="Direccion"/>
 	

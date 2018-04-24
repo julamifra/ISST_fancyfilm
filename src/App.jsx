@@ -72,7 +72,7 @@ class App extends React.Component {
   clickLogin(nombreCineLogeado, direccion){
     this.setState({
           botonSeleccionado: "inicio",
-          cineLogeado: nombreCineLogeado
+          cineLogeado: nombreCineLogeado,
     });
     $.ajax({
   	url: "http://localhost:8080/ISST/NuevoCineServlet?nombreCine="+nombreCineLogeado+"&direccion="+direccion,
