@@ -1,5 +1,6 @@
 import React from 'react';
 import CarteleraElement from './CarteleraElement';
+import { CardColumns } from 'reactstrap';
 
 
 export default class Cartelera extends React.Component {
@@ -8,14 +9,17 @@ export default class Cartelera extends React.Component {
 		this.detallePelisClick = this.detallePelisClick.bind(this);
     	}
 
-	detallePelisClick(peli){
-        	this.props.detallePelisClick(peli);
+	detallePelisClick(peli, urlImg){
+        	this.props.detallePelisClick(peli, urlImg);
     	}
 	render() {
 		let pelis = this.props.pelis;
 
 		if(pelis === undefined){
-			return <div>Cargando nueva lista...</div>
+			return <div className="tamaño-vista">
+						<h2 className="fuente-inicio-titulo">Películas</h2>
+						Cargando Películas...
+					</div>
             	}else{
 			let pelis = this.props.pelis.map((peli, numeroPeli) => {
 		 		let mykey = "" + numeroPeli;
@@ -25,7 +29,11 @@ export default class Cartelera extends React.Component {
 		  	});
 		    	return (<div>
 			    		<h2 className="fuente-inicio-titulo">Películas</h2>
-			    		<div>{pelis}</div>
+			    		<div>
+			    			<CardColumns>
+			    				{pelis}	
+			    			</CardColumns>
+			    		</div>
 		   	 	</div>);
 		}
 	}

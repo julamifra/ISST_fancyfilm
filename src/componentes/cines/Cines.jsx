@@ -1,5 +1,6 @@
 import React from 'react';
 import CineElement from './CineElement';
+import { Table } from 'reactstrap';
 
 
 export default class Cines extends React.Component {
@@ -16,7 +17,10 @@ export default class Cines extends React.Component {
 		let cines = this.props.cines;
 
 		if(cines === undefined){
-			return <div>Cargando nueva lista...</div>
+			return <div className="tamaño-vista">
+					 <h2 className="fuente-inicio-titulo">Cines</h2>
+					 Cargando nueva lista...
+					</div>
             	}else{
 			let cines = this.props.cines.map((cine, numeroCine) => {
 		 		let mykey = "" + numeroCine;
@@ -26,7 +30,13 @@ export default class Cines extends React.Component {
 		  	});
 		    	return (<div>
 			    		<h2 className="fuente-inicio-titulo">Cines</h2>
-			    		<div >{cines}</div>
+			    		<div>
+			    			<Table hover>
+			    				<tbody>
+			    				{cines}
+			    				</tbody>
+			    			</Table>
+			    		</div>
 		   	 	</div>);
 		}
 		

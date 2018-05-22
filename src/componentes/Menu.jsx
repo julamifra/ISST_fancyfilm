@@ -1,5 +1,10 @@
 import React from 'react';
-import './App.css'
+import './App.css' 
+import {
+  Nav,
+  NavItem,
+  NavLink,
+  } from 'reactstrap';
 
 export default class Menu extends React.Component {
 
@@ -26,15 +31,59 @@ export default class Menu extends React.Component {
   	
 
 	render() {
+    let cineLogeado=this.props.cineLogeado;
+    let espectadorLogeado=this.props.espectadorLogeado;
+    if((cineLogeado !== undefined)&&(espectadorLogeado === undefined)){
 		return (
-			<div className ="App-menu">
-				<div className="App-menu-boton1">
-				<button id="IrCine" onClick={this.irAlgoCi} className="App-boton"> Cine </button>
-				<button id="IrCartelera" onClick={this.irAlgoCa} className="App-boton"> Cartelera </button>
-				<button id="IrContacto" onClick={this.irAlgoCo} className="App-boton"> Contactar </button>
-				<button id="IrPromo" onClick={this.irAlgoPro} className="App-boton"> Publicar promoción </button>
-				</div>
-			</div>
+			<Nav tabs>
+          <NavItem>
+            <NavLink id="IrCartelera" onClick={this.irAlgoCa} >Cartelera</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink id="IrCine" onClick={this.irAlgoCi} >Cine</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink id="IrContacto" onClick={this.irAlgoCo} >Contactar</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink id="IrPromo" onClick={this.irAlgoPro} >Publicar Promoción</NavLink>
+          </NavItem>
+        </Nav>
+      
 		);
-	}
+	  }else if((espectadorLogeado !== undefined)&&(cineLogeado === undefined)){
+        return (
+      <Nav tabs>
+          <NavItem>
+            <NavLink id="IrCartelera" onClick={this.irAlgoCa} >Cartelera</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink id="IrCine" onClick={this.irAlgoCi} >Cine</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink id="IrContacto" onClick={this.irAlgoCo} >Contactar</NavLink>
+          </NavItem>
+        </Nav>
+        );
+
+    }else{
+       return (
+       <Nav tabs>
+          <NavItem>
+            <NavLink id="IrCartelera" onClick={this.irAlgoCa} >Cartelera</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink id="IrCine" onClick={this.irAlgoCi} >Cine</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink id="IrContacto" onClick={this.irAlgoCo} >Contactar</NavLink>
+          </NavItem>
+        </Nav>
+        );
+    }
+
+  }
 }
+
+
+

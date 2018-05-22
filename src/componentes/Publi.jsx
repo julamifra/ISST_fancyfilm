@@ -1,22 +1,40 @@
 import React from 'react';
-import img1 from './imagen1.png';
-import img2 from './imagen2.jpg';
-import img3 from './imagen3.jpg';
+import img1 from './imagenes/publi4.jpg';
+import img2 from './imagenes/publi3.jpg';
+import img3 from './imagenes/publi2.jpg';
+import img4 from './imagenes/publi5.jpg';
 
+import { UncontrolledCarousel } from 'reactstrap';
+
+const items = [
+  {
+    src: img1,
+    altText: '',
+    caption: '',
+  },
+  {
+   src: img2,
+   altText: '',
+   caption: '',
+  },
+  {
+   src: img3,
+   altText: '',
+   caption: '',
+  },
+  {
+   src: img4,
+   altText: '',
+   caption: '',
+  }
+];
 
 export default class Publi extends React.Component {
 
-  	getRandomArbitrary(min,max){
-  		return Math.floor(Math.random()*(max-min))+min;
-  	}
- 
 	render() {
-		var imagenes = [img1,img2,img3]
-		var numero = this.getRandomArbitrary(0,3);
-		var resultado = imagenes[numero];
-		return (
-			<div className = "publi">
-			  <img src={resultado} alt='logo' /> 
+		return(
+			<div className="publi">
+				<UncontrolledCarousel className="bajar" items ={items}/>
 			</div>
 		);
 	}

@@ -12,15 +12,12 @@ export default class CineElement extends React.Component {
 	render() {
   		let nombreCine = this.props.cine.nombreCine;
 
-      		return (<div>
-	      			<table>
-					<tbody>
-	      				<tr> 
-	      					<td><button id="IrCine" onClick={this.clickCine} className = "estiloSeleccion" > {nombreCine} </button></td>
-	      				</tr>
-					</tbody>
-	      			</table>
-			</div>
+      		return (
+      				<tr>   
+                <td className="fuente-tabla" id="IrCine" onClick={this.clickCine}> {nombreCine}</td>
+              </tr>
       		);
   	}
 }
+
+/*<td className="tabla-th"><img className="foto-tabla" src={urlImg}/></td>*/
