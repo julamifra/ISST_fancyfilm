@@ -20,19 +20,17 @@ public class CarteleraServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		//Creación de la base de datos, con nuestras peliculas
-		crearBBDD.main();
-		
 		//Servlet para la lista de peliculas
 		PeliculaDAO peli = PeliculaDAOImplementation.getInstance();
 		List<Pelicula> pelis = peli.readAllPeliculas();
 		
 		//Generación del JSON para responder
 		Gson gson = new Gson();
+		for(Pelicula p: pelis)p.setMisComentarios(null);
 		String json = gson.toJson(pelis);
 		
 		//Control
-		System.out.println("JSON en la respuesta (cartelera): " + json);
+		//System.out.println("JSON en la respuesta (cartelera): " + json);
 		
 		//Respuesta
 		resp.setContentType("application/json");
@@ -40,5 +38,6 @@ public class CarteleraServlet extends HttpServlet{
 		pw.print(json);	
 		pw.flush();
 		pw.close();
+		
 	}
 }

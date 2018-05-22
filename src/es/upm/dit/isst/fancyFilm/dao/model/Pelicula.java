@@ -15,6 +15,8 @@ public class Pelicula implements Serializable{
 	private String pais;
 	private String directorNombre;
 	private String idioma;
+	@Column(columnDefinition = "longvarchar") 
+	private String sinopsis;
 	@Lob
 	private byte[] cartel;
 	private String trailerURL;
@@ -79,6 +81,14 @@ public class Pelicula implements Serializable{
 
 	public void setIdioma(String idioma) {
 		this.idioma = idioma;
+	}
+
+	public String getSinopsis() {
+		return sinopsis;
+	}
+
+	public void setSinopsis(String sinopsis) {
+		this.sinopsis = sinopsis;
 	}
 
 	public byte[] getCartel() {

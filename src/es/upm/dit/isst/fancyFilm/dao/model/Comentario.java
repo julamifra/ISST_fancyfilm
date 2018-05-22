@@ -7,11 +7,18 @@ import javax.persistence.*;
 @Entity
 public class Comentario implements Serializable{
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	@Column(columnDefinition = "longvarchar") 
 	private String cuerpo;
+	private String espectadorNombre;
 	private int valoracion;
 	@ManyToOne
 	private Pelicula pelicula;
+	@ManyToOne
+	private Cine cine;
+	@ManyToOne
+	private Espectador espectador;
 	
 	public Comentario() {
 		
@@ -47,6 +54,30 @@ public class Comentario implements Serializable{
 
 	public void setPelicula(Pelicula pelicula) {
 		this.pelicula = pelicula;
+	}
+
+	public Cine getCine() {
+		return cine;
+	}
+
+	public void setCine(Cine cine) {
+		this.cine = cine;
+	}
+
+	public Espectador getEspectador() {
+		return espectador;
+	}
+
+	public void setEspectador(Espectador espectador) {
+		this.espectador = espectador;
+	}
+
+	public String getEspectadorNombre() {
+		return espectadorNombre;
+	}
+
+	public void setEspectadorNombre(String espectadorNombre) {
+		this.espectadorNombre = espectadorNombre;
 	}
 	
 }

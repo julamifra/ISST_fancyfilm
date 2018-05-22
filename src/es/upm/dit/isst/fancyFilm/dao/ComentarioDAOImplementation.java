@@ -10,7 +10,6 @@ import es.upm.dit.isst.fancyFilm.dao.model.Pelicula;
 
 public class ComentarioDAOImplementation implements ComentarioDAO{
 	public static ComentarioDAOImplementation instance = null;
-	private static int idNext = 1;
 	
 	private ComentarioDAOImplementation(){}
 	public static ComentarioDAOImplementation getInstance(){
@@ -38,8 +37,6 @@ public class ComentarioDAOImplementation implements ComentarioDAO{
 	@Override
 	public void createComentario(Comentario comentario) {
 		Session session = SessionFactoryService.get().openSession();
-		comentario.setId(idNext);
-		idNext++;
 		try {
 			session.beginTransaction();
 			session.save(comentario);

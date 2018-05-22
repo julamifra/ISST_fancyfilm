@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import es.upm.dit.isst.fancyFilm.dao.CineDAO;
 import es.upm.dit.isst.fancyFilm.dao.CineDAOImplementation;
 import es.upm.dit.isst.fancyFilm.dao.model.Cine;
+import es.upm.dit.isst.fancyFilm.dao.model.Pelicula;
 
 @WebServlet("/CinesServlet")
 public class CinesServlet extends HttpServlet{
@@ -27,10 +28,12 @@ public class CinesServlet extends HttpServlet{
 		
 		//Generación del JSON para responder
 		Gson gson = new Gson();
+		for(Cine c: cines)c.setMisComentarios(null);
+		for(Cine c: cines)c.setMisPromos(null);
 		String json = gson.toJson(cines);
 		
 		//Control
-		System.out.println("JSON en la respuesta (cines): " + json);
+		//System.out.println("JSON en la respuesta (cines): " + json);
 		
 		//Respuesta
 		resp.setContentType("application/json");

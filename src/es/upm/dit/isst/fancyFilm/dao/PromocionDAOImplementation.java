@@ -10,7 +10,6 @@ import es.upm.dit.isst.fancyFilm.dao.model.Promocion;
 
 public class PromocionDAOImplementation implements PromocionDAO{
 	public static PromocionDAOImplementation instance = null;
-	private static int idNext = 1;
 	
 	private PromocionDAOImplementation(){}
 	public static PromocionDAOImplementation getInstance(){
@@ -38,8 +37,6 @@ public class PromocionDAOImplementation implements PromocionDAO{
 	@Override
 	public void createPromocion(Promocion promo) {
 		Session session = SessionFactoryService.get().openSession();
-		promo.setId(idNext);
-		idNext++;
 		try {
 			session.beginTransaction();
 			session.save(promo);

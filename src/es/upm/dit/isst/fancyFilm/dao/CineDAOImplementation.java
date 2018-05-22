@@ -48,11 +48,11 @@ public class CineDAOImplementation implements CineDAO{
 		
 	}
 	@Override
-	public Cine readCine(String nombreCine) {
+	public Cine readCine(String email) {
 		Session session = SessionFactoryService.get().openSession();
 		Cine cine = null;
 		try {
-			cine = session.get(Cine.class, nombreCine);
+			cine = session.get(Cine.class, email);
 			
 		}catch (Exception e){
 			

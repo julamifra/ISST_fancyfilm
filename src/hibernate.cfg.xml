@@ -19,6 +19,7 @@
 		<mapping class="es.upm.dit.isst.fancyFilm.dao.model.Pelicula" />
 		<mapping class="es.upm.dit.isst.fancyFilm.dao.model.Comentario" />
 		<mapping class="es.upm.dit.isst.fancyFilm.dao.model.Promocion" />
+		<mapping class="es.upm.dit.isst.fancyFilm.dao.model.Espectador" />
 	</session-factory>
 	
 </hibernate-configuration>

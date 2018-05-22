@@ -24,7 +24,7 @@ public class ImgPeliculaServlet  extends HttpServlet {
 		PeliculaDAO dao = PeliculaDAOImplementation.getInstance();
 		Pelicula peli = dao.readPelicula(nombre);
 		
-		System.out.println("nombre: " + nombre);
+		System.out.println("Se envía la imagen de la película: " + nombre);
 		
 		resp.setContentType("application/jpeg");
 		resp.setContentLength(peli.getCartel().length);

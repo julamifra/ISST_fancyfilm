@@ -5,5 +5,6 @@
 		<class>es.upm.dit.isst.fancyFilm.dao.model.Comentario</class>
 		<class>es.upm.dit.isst.fancyFilm.dao.model.Cine</class>
 		<class>es.upm.dit.isst.fancyFilm.dao.model.Promocion</class>
+		<class>es.upm.dit.isst.fancyFilm.dao.model.Espectador</class>
 	</persistence-unit>
 </persistence>

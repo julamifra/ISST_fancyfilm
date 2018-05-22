@@ -7,8 +7,10 @@ import javax.persistence.*;
 @Entity
 public class Promocion implements Serializable{
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private String titulo;
+	@Column(columnDefinition = "longvarchar") 
 	private String descripcion;
 	@ManyToOne
 	private Cine cine;
